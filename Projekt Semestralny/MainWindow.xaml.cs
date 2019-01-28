@@ -22,10 +22,24 @@ namespace Projekt_Semestralny
     /// </summary>
     public partial class MainWindow : Window
     {
+        System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
         public MainWindow()
         {
             InitializeComponent();
             label1.Content = balance.ToString();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
+            
+            
+        }
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            Window1 po_wylosowaniu = new Window1();
+            {
+                po_wylosowaniu.Show();
+                dispatcherTimer.Stop();
+                
+            }
         }
         Random rnd = new Random();
         public static float losowanie = 0;
@@ -43,8 +57,6 @@ namespace Projekt_Semestralny
         public static int tec = 0;
 
 
-       
-       
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -56,7 +68,7 @@ namespace Projekt_Semestralny
         {
             if (balance >= 2)
             {
-                losowanie = rnd.Next(0, 100);
+                losowanie = rnd.Next(0, 1);
                 balance -= 2;
                 label1.Content = balance.ToString();
                 btnChange.IsEnabled = false;
@@ -65,6 +77,9 @@ namespace Projekt_Semestralny
                 {           
                     MovingImage.Source = new BitmapImage(new Uri("pack://application:,,,/Projekt Semestralny;component/grafika/karambit_lore.png"));      
                     karambit += 1;
+                    dispatcherTimer.Start();
+                    
+                    
                 }
                 if (losowanie >= 2 && losowanie <= 3)
                 {

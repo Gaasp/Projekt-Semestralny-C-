@@ -1,0 +1,20 @@
+﻿<Window x:Class="Projekt_Semestralny.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt_Semestralny"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="110*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="skorka" HorizontalAlignment="Left" Height="192" Margin="126.896,101,0,0" VerticalAlignment="Top" Width="217" Grid.Column="2"/>
+        <Button x:Name="zamknij" Content="Button" HorizontalAlignment="Left" Margin="98,378,0,0" VerticalAlignment="Top" Width="441" Click="Zamknij_Click" Grid.ColumnSpan="3"/>
+        <Label x:Name="nazwa_skorki" Content="Label" HorizontalAlignment="Left" Margin="211.896,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.814,-10.764" Grid.Column="2"/>
+
+    </Grid>
+</Window>
