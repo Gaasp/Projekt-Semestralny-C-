@@ -25,6 +25,7 @@ namespace Projekt_Semestralny
         public MainWindow()
         {
             InitializeComponent();
+            label1.Content = balance.ToString();
         }
         Random rnd = new Random();
         public static float losowanie = 0;
@@ -47,67 +48,73 @@ namespace Projekt_Semestralny
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(balance>=2)
+           
+
+        }
+       
+        private void BtnChange_Click(object sender, RoutedEventArgs e)
+        {
+            if (balance >= 2)
             {
                 losowanie = rnd.Next(0, 100);
-                balance -=2;
+                balance -= 2;
+                label1.Content = balance.ToString();
+                btnChange.IsEnabled = false;
 
-                //pokazac balance
-
-            if(losowanie >= 0 && losowanie <= 1)
-                {
-                    //obrazek karambitu
+                if (losowanie >= 0 && losowanie <= 100)
+                {           
+                    MovingImage.Source = new BitmapImage(new Uri("pack://application:,,,/Projekt Semestralny;component/grafika/karambit_lore.png"));      
                     karambit += 1;
                 }
-            if(losowanie >=2 && losowanie <= 3)
+                if (losowanie >= 2 && losowanie <= 3)
                 {
-                    //obrazek bayonet_gammadoppler.png
+                    MovingImage.Source = new BitmapImage(new Uri("pack://application:,,,/Projekt Semestralny;component/grafika/bayonet_gammadoppler.png"));
                     bayonet += 1;
                 }
-            if(losowanie >=4 && losowanie <=5)
+                if (losowanie >= 4 && losowanie <= 5)
                 {
-                    //obrazek hunstam_knife_marble_fade.png
+                    MovingImage.Source = new BitmapImage(new Uri("pack://application:,,,/Projekt Semestralny;component/grafika/hunstam_knife_marble_fade.png"));
                     huntsman += 1;
                 }
-            if(losowanie >=6 && losowanie<=10)
+                if (losowanie >= 6 && losowanie <= 10)
                 {
-                    //obrazek ak47_the_empress.png
+                    MovingImage.Source = new BitmapImage(new Uri("pack://application:,,,/Projekt Semestralny;component/grafika/ak47_the_empress.png"));
                     ak47 += 1;
                 }
-            if(losowanie >=11 && losowanie <=15)
+                if (losowanie >= 11 && losowanie <= 15)
                 {
-                    //obrazek p250_see_ya_later.png
+                    MovingImage.Source = new BitmapImage(new Uri("pack://application:,,,/Projekt Semestralny;component/grafika/p250_see_ya_later.png"));
                     p250 += 1;
                 }
-            if(losowanie >=16 && losowanie <=27)
+                if (losowanie >= 16 && losowanie <= 27)
                 {
-                    //obrazek r8_revolver_llama_cannon.png
+                    MovingImage.Source = new BitmapImage(new Uri("pack://application:,,,/Projekt Semestralny;component/grafika/r8_revolver_llama_cannon.png"));
                     r8 += 1;
                 }
-            if (losowanie >= 28 && losowanie <= 40)
+                if (losowanie >= 28 && losowanie <= 40)
                 {
-              //obrazek m4a1-s_leaded_glass.png
-                m4a1 += 1;
+                    MovingImage.Source = new BitmapImage(new Uri("pack://application:,,,/Projekt Semestralny;component/grafika/m4a1-s_leaded_glass.png"));
+                    m4a1 += 1;
                 }
-
-            //zwykle 41-100
-            if (losowanie >= 41 && losowanie <= 60)
+                //zwykle 41-100
+                if (losowanie >= 41 && losowanie <= 60)
                 {
-               //obrazektec-9_cracked_opal.png
-                tec += 1;
+                    MovingImage.Source = new BitmapImage(new Uri("pack://application:,,,/Projekt Semestralny;component/grafika/tec-9_cracked_opal.png"));
+                    tec += 1;
                 }
-            if (losowanie >= 61 && losowanie <= 80)
+                if (losowanie >= 61 && losowanie <= 80)
                 {
-               //obrazek grafika/aug_tiqua.png
-                aug += 1;
+                    MovingImage.Source = new BitmapImage(new Uri("pack://application:,,,/Projekt Semestralny;component/grafika/aug_tiqua.png"));
+                    aug += 1;
                 }
-            if (losowanie >= 81 && losowanie <= 100)
+                if (losowanie >= 81 && losowanie <= 100)
                 {
-               //obrazek mac-10_oceanic.png
-                mac10 += 1;
+                    MovingImage.Source = new BitmapImage(new Uri("pack://application:,,,/Projekt Semestralny;component/grafika/mac-10_oceanic.png"));
+                    mac10 += 1;
                 }
             }
         }
+       
     }
 }
 

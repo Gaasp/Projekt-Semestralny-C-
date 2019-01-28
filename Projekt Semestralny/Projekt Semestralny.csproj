@@ -95,7 +95,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="grafika\ak47_the_empress.png" />
+    <Resource Include="grafika\aug_tiqua.png" />
+    <Resource Include="grafika\bayonet_gammadoppler.png" />
+    <Resource Include="grafika\hunstam_knife_marble_fade.png" />
+    <Resource Include="grafika\karambit_lore.png" />
+    <Resource Include="grafika\m4a1-s_leaded_glass.png" />
+    <Resource Include="grafika\mac-10_oceanic.png" />
+    <Resource Include="grafika\p250_see_ya_later.png" />
+    <Resource Include="grafika\r8_revolver_llama_cannon.png" />
     <Resource Include="grafika\skrzynka.png" />
+    <Resource Include="grafika\tec-9_cracked_opal.png" />
+    <Resource Include="grafika\tło.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

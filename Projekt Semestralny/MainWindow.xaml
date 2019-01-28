@@ -27,7 +27,7 @@
 
         Storyboard.TargetProperty="(Image.RenderTransform).(TranslateTransform.Y)"
 
-        By="-50" Duration="0:0:3">
+        By="-100" Duration="0:0:5">
 
                 </DoubleAnimation>
 
@@ -47,23 +47,20 @@
 
         </Grid.Triggers>
 
-        <StackPanel Orientation="Horizontal" Margin="5">
 
-            <Image x:Name="MovingImage" Source="C:\Users\Mati\source\repos\Projekt Semestralny\grafika\karambit_lore.png"
+        <Image x:Name="MovingImage"
+            MaxWidth="384" Margin="52,93,77,129" MaxHeight="512" Grid.Row="1" >
 
-            MaxWidth="120" Margin="65,155,64,-149" Height="80">
+            <Image.RenderTransform>
 
-                <Image.RenderTransform>
+                <TranslateTransform />
 
-                    <TranslateTransform />
+            </Image.RenderTransform>
 
-                </Image.RenderTransform>
+        </Image>
 
-            </Image>
+        <Image Source="{x:Null}" />
 
-            <Image Source="{x:Null}" />
-
-        </StackPanel>
 
 
 
@@ -71,7 +68,8 @@
 
         Content="Show Image" Name="btnChange"
 
-        HorizontalAlignment="Left" />
-        <Image Name="imgChange" HorizontalAlignment="Left" Height="149" Margin="114,140,0,0" VerticalAlignment="Top" Width="142" Source="C:\Users\Mati\source\repos\Projekt Semestralny\grafika\skrzynka.png" Grid.Row="1"/>
+        HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.871" Click="BtnChange_Click" />
+        <Image Name="imgChange" HorizontalAlignment="Left" Height="158" Margin="92,132,0,0" VerticalAlignment="Top" Width="198" Source="C:\Users\Mati\source\repos\Projekt Semestralny\grafika\skrzynka.png" Grid.Row="1"/>
+        <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="114,343,0,0" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
 </Window>
