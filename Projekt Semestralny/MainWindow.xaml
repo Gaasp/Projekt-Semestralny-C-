@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt_Semestralny"
         mc:Ignorable="d"
-        Title="MainWindow" Height="611" Width="400">
-
+        Title="Case Opening" Height="611" Width="400">
+    <Window.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="grafika/tło.jpg">
+        </ImageBrush>
+    </Window.Background>
 
     <Grid Margin="0,0,2,0">
         <Grid.RowDefinitions>
@@ -21,33 +44,35 @@
 
             <Storyboard x:Key="TransformImage">
 
-                <DoubleAnimation
+                <DoubleAnimation Storyboard.TargetName="MovingImage" Storyboard.TargetProperty="(Image.RenderTransform).(TranslateTransform.Y)" By="-100" Duration="0:0:5">
 
-        Storyboard.TargetName="MovingImage"
-        
-        Storyboard.TargetProperty="(Image.RenderTransform).(TranslateTransform.Y)" By="-100" Duration="0:0:5">
-                    
 
                 </DoubleAnimation>
 
             </Storyboard>
 
         </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="233*"/>
+            <ColumnDefinition Width="157*"/>
+        </Grid.ColumnDefinitions>
 
 
 
         <Grid.Triggers>
 
-            <EventTrigger RoutedEvent="Button.Click" SourceName="btnChange">
+            <EventTrigger RoutedEvent="Button.Click" SourceName="skrzynkaa">
 
                 <BeginStoryboard Storyboard="{StaticResource TransformImage}"/>
+
+
 
             </EventTrigger>
 
         </Grid.Triggers>
 
 
-        <Image x:Name="MovingImage" MaxWidth="384" Margin="92,132,100,108" MaxHeight="512" Grid.Row="1" >
+        <Image x:Name="MovingImage" MaxWidth="384" Margin="100,190,100,50" MaxHeight="512" Grid.Row="1" Grid.ColumnSpan="2" >
 
             <Image.RenderTransform>
 
@@ -56,18 +81,17 @@
             </Image.RenderTransform>
 
         </Image>
+        <Button Name="skrzynkaa" Click="Skrzynka_Click" BorderBrush="Transparent" Margin="114,190,100,29" Grid.Row="1" Style="{StaticResource MyButton}" Grid.ColumnSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="/Projekt Semestralny;component/grafika/skrzynka.png"/>
+            </Button.Background>
 
-       
 
 
+        </Button>
 
-
-        <Button Margin="52,0,0,11" MaxHeight="44" MaxWidth="118"
-
-        Content="Show Image" Name="btnChange"
-
-        HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.871" Click="BtnChange_Click" />
-        <Image Name="imgChange" HorizontalAlignment="Left" Height="158" Margin="92,132,0,0" VerticalAlignment="Top" Width="198" Source="C:\Users\Mati\source\repos\Projekt Semestralny\grafika\skrzynka.png" Grid.Row="1"/>
-        <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="114,343,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Stan konta: " HorizontalAlignment="Left" Margin="169,40,0,0" VerticalAlignment="Top" Foreground="#FFF3F3F3" Grid.ColumnSpan="2" />
+        <Button Content="Ekwipunek" HorizontalAlignment="Left" Margin="61,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="74" Click="Button_Click" Style="{StaticResource MyButton}" Foreground="White" Grid.Column="1"/>
+        <Label Content="Kliknij na skrzynkę, aby ją otworzyć" HorizontalAlignment="Left" Margin="100,362,0,0" Grid.Row="1" VerticalAlignment="Top" Width="231" Foreground="White" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

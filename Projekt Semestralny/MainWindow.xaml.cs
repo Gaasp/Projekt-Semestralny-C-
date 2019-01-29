@@ -26,7 +26,7 @@ namespace Projekt_Semestralny
         System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
 
         Window1 po_wylosowaniu = new Window1();
-       
+        Window2 dodaj = new Window2();
         Random rnd = new Random();
         public static float losowanie = 0;
         public static double balance = 5;
@@ -45,10 +45,10 @@ namespace Projekt_Semestralny
         public MainWindow()
         {
             InitializeComponent();
-            label1.Content = balance.ToString();
+            label1.Content = "Stan konta: "+balance.ToString()+"$";
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
-
+         
            
         }
       
@@ -56,8 +56,9 @@ namespace Projekt_Semestralny
         {
           
             {
+                
                 po_wylosowaniu.Show();
-               
+              
                 dispatcherTimer.Stop();
                 
             }
@@ -70,8 +71,8 @@ namespace Projekt_Semestralny
             {
                 losowanie = rnd.Next(0, 1);
                 balance -= 2;
-                label1.Content = balance.ToString();
-                //btnChange.IsEnabled = false;
+                label1.Content = "Stan konta: "+balance.ToString()+"$";
+              
                 
                 if (losowanie >= 0 && losowanie <= 1)
                 {
@@ -80,6 +81,7 @@ namespace Projekt_Semestralny
                     po_wylosowaniu.nazwa_skorki.Content = "Twój nowy przedmiot to Karambit Lore";
                     karambit += 1;
                     dispatcherTimer.Start();
+                   
                    
 
                 }
@@ -167,12 +169,23 @@ namespace Projekt_Semestralny
        
         private void BtnChange_Click(object sender, RoutedEventArgs e)
         {
-            wylosowanie();
-
-
-            MovingImage.Margin = new Thickness(92, 132, 100, 108);
+           
+          
         }
-       
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            new Window4().Show();
+        }
+
+        private void Skrzynka_Click(object sender, RoutedEventArgs e)
+        {
+            if (balance >= 2)
+            {
+                wylosowanie();
+            }
+            MovingImage.RenderTransform = new TranslateTransform();
+        }
     }
 }
 

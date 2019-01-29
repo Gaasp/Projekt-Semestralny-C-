@@ -1,0 +1,86 @@
+﻿<Window x:Class="Projekt_Semestralny.Window4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt_Semestralny"
+        mc:Ignorable="d"
+        Title="Case Opening" Height="588.297" Width="815">
+    <Window.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="grafika/tło.jpg"/>
+    </Window.Background>
+    <Grid Height="557" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="201*"/>
+            <ColumnDefinition Width="68*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="AK-47|The Empress " HorizontalAlignment="Left" Margin="55,330,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="AUG | Tiqua" HorizontalAlignment="Left" Margin="224,330,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="M4A1-S | Leaded Glass" HorizontalAlignment="Left" Margin="340,330,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Mac-10 | Oceanic" HorizontalAlignment="Left" Margin="501,330,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="P250 | See ya later" HorizontalAlignment="Left" Margin="40,330,0,0" VerticalAlignment="Top" Grid.Column="1" Foreground="White"/>
+        <Label Content="R8 Revolver | Llama Cannon" HorizontalAlignment="Left" Margin="45,476,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Tec-9 | Cracked Opal" HorizontalAlignment="Left" Margin="207,476,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.566,-0.614" Foreground="White"/>
+        <Label Content="Bayonet | Gamma Doppler" HorizontalAlignment="Left" Margin="331,476,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Hunstam | Marble Fade" HorizontalAlignment="Left" Margin="486,476,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.097,-0.573" Grid.ColumnSpan="2" Foreground="White"/>
+        <Label Content="Karambit | Lore" HorizontalAlignment="Left" Margin="50,476,0,0" VerticalAlignment="Top" Grid.Column="1" Foreground="White"/>
+        <Image x:Name="glowne" HorizontalAlignment="Left" Height="172" Margin="256,10,0,0" VerticalAlignment="Top" Width="304"/>
+        <Label x:Name="ilosc" Content="Ilość:" HorizontalAlignment="Left" Margin="30,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.098,0.42" Grid.Column="1" Foreground="White"/>
+        <Label x:Name="cena" Content="Cena:" HorizontalAlignment="Left" Margin="91,44,0,0" VerticalAlignment="Top" Grid.Column="1" Foreground="White"/>
+        <Button Name="AK" Click="AK_Click" Margin="45,214,427,227" Background="Transparent" BorderBrush="Transparent"  Style="{StaticResource MyButton}">
+            <Image Height="138" Width="111" Source="/Projekt Semestralny;component/grafika/ak47_the_empress.png"/>
+        </Button>
+        <Button Name="AUG" Width="100" Height="100" Click="AUG_Click" Margin="214,230,289,227" Background="Transparent" BorderBrush="Transparent" Style="{StaticResource MyButton}">
+            <Image Source="/Projekt Semestralny;component/grafika/aug_tiqua.png"></Image>
+        </Button>
+        <Button Name="M4A1" Width="100" Height="100" Click="M4A1_Click" Margin="362,230,141,227" Background="Transparent" BorderBrush="Transparent" Style="{StaticResource MyButton}">
+            <Image Source="/Projekt Semestralny;component/grafika/m4a1-s_leaded_glass.png"></Image>
+        </Button>
+        <Button Name="MAC" Width="100" Height="100" Click="MAC_Click" Margin="510,230,197,227" Background="Transparent" BorderBrush="Transparent" Style="{StaticResource MyButton}" Grid.ColumnSpan="2">
+            <Image Source="/Projekt Semestralny;component/grafika/mac-10_oceanic.png"></Image>
+        </Button>
+        <Button Name="P250" Width="100" Height="100" Click="P250_Click" Margin="47,236,57,221" Background="Transparent" BorderBrush="Transparent" Style="{StaticResource MyButton}" Grid.Column="1">
+            <Image Source="/Projekt Semestralny;component/grafika/p250_see_ya_later.png"></Image>
+        </Button>
+        <Button Name="R8" Width="100" Height="100" Click="R8_Click" Background="Transparent" BorderBrush="Transparent" Margin="78,371,425,86" Style="{StaticResource MyButton}">
+            <Image Source="/Projekt Semestralny;component/grafika/r8_revolver_llama_cannon.png"></Image>
+        </Button>
+        <Button Name="Tec" Width="100" Height="100" Click="Tec_Click" Background="Transparent" BorderBrush="Transparent" Margin="232,376,271,81" Style="{StaticResource MyButton}">
+            <Image Source="/Projekt Semestralny;component/grafika/tec-9_cracked_opal.png">
+            </Image>
+        </Button>
+        <Button Name="Bayonet" Width="100" Height="100" Click="Bayonet_Click" Background="Transparent" BorderBrush="Transparent" Margin="362,376,141,81" Style="{StaticResource MyButton}">
+            <Image Source="/Projekt Semestralny;component/grafika/bayonet_gammadoppler.png">
+            </Image>
+        </Button>
+        <Button Name="Hunstam" Width="100" Height="100" Click="Hunstam_Click" Background="Transparent" BorderBrush="Transparent" Margin="510,376,197,81" Style="{StaticResource MyButton}" Grid.ColumnSpan="2">
+            <Image Source="/Projekt Semestralny;component/grafika/hunstam_knife_marble_fade.png"></Image>
+        </Button>
+        <Button Name="Karambit" Width="100" Height="100" Click="Karambit_Click" Background="Transparent" BorderBrush="Transparent" Margin="55,376,49,81" Style="{StaticResource MyButton}" Grid.Column="1">
+            <Image Source="/Projekt Semestralny;component/grafika/karambit_lore.png"></Image>
+        </Button>
+        <Button x:Name="sprzedaj" Content="Sprzedaj" Grid.Column="1" HorizontalAlignment="Left" Margin="47,84,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Style="{StaticResource MyButton}" Foreground="White" Click="Sprzedaj_Click"/>
+        <Button Content="Zamknij" HorizontalAlignment="Left" Margin="362,531,0,0" VerticalAlignment="Top" Width="75" Style="{StaticResource MyButton}" Foreground="White" Click="Button_Click"/>
+    </Grid>
+</Window>
