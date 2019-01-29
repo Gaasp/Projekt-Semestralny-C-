@@ -24,10 +24,9 @@
                 <DoubleAnimation
 
         Storyboard.TargetName="MovingImage"
-
-        Storyboard.TargetProperty="(Image.RenderTransform).(TranslateTransform.Y)"
-
-        By="-100" Duration="0:0:5">
+        
+        Storyboard.TargetProperty="(Image.RenderTransform).(TranslateTransform.Y)" By="-100" Duration="0:0:5">
+                    
 
                 </DoubleAnimation>
 
@@ -48,8 +47,7 @@
         </Grid.Triggers>
 
 
-        <Image x:Name="MovingImage"
-            MaxWidth="384" Margin="52,93,77,129" MaxHeight="512" Grid.Row="1" >
+        <Image x:Name="MovingImage" MaxWidth="384" Margin="92,132,100,108" MaxHeight="512" Grid.Row="1" >
 
             <Image.RenderTransform>
 
@@ -59,7 +57,7 @@
 
         </Image>
 
-        <Image Source="{x:Null}" />
+       
 
 
 

@@ -12,9 +12,9 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="110*"/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="skorka" HorizontalAlignment="Left" Height="192" Margin="126.896,101,0,0" VerticalAlignment="Top" Width="217" Grid.Column="2"/>
-        <Button x:Name="zamknij" Content="Button" HorizontalAlignment="Left" Margin="98,378,0,0" VerticalAlignment="Top" Width="441" Click="Zamknij_Click" Grid.ColumnSpan="3"/>
-        <Label x:Name="nazwa_skorki" Content="Label" HorizontalAlignment="Left" Margin="211.896,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.814,-10.764" Grid.Column="2"/>
+        <Image x:Name="skorka" HorizontalAlignment="Left" Height="192" Margin="150,103,0,0" VerticalAlignment="Top" Width="217" Grid.Column="2"/>
+        <Button x:Name="zamknij" Content="Zamknij" HorizontalAlignment="Left" Margin="33,371,0,0" VerticalAlignment="Top" Width="441" Click="Zamknij_Click" Grid.Column="2"/>
+        <Label x:Name="nazwa_skorki" Content="" HorizontalAlignment="Left" Margin="251,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.814,-10.764" Grid.Column="2"/>
 
     </Grid>
 </Window>

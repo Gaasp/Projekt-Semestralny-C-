@@ -20,24 +20,19 @@ namespace Projekt_Semestralny
     /// </summary>
     public partial class Window1 : Window
     {
+
+        
         public Window1()
         {
             InitializeComponent();
-            if (MainWindow.losowanie >= 0 && MainWindow.losowanie <= 1)
-            {
-
-            }
-            int test = 0;
+            
         }
-
+        
        
         private void Zamknij_Click(object sender, RoutedEventArgs e)
         {
-            
-            if(MainWindow.losowanie >=0 && MainWindow.losowanie <=1)
-            {
-
-            }
+            this.Close();
+                
         }
     }
 }
